@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Chủ - Lớp Học Màu Hồng Nhạt</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffe6f2; /* Màu hồng nhạt */
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header, footer {
+      background-color: #ffb6c1; /* Màu hồng đậm hơn */
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      color: #8b0000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #8b0000;
+      font-weight: bold;
+      padding:  10 px 25px;
+      border: 2px solid #8b0000;
+      border-radius: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #8b0000;
+      color: #fff;
+    }
+
+
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #8b0000;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 30px;
+    }
+    /* Định dạng trái tim */
+    .heart {
+    width: 10px;
+    height: 10px;
+    position: fixed;
+    background-color: red;
+    transform: rotate(45deg);
+    animation: fall linear infinite;
+    z-index: 9999;
+    top: -10px; /* Bắt đầu từ phía trên màn hình */
+}
+
+    /* Tạo hình trái tim bằng pseudo-elements */
+    .heart::before,
+    .heart::after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .heart::before {
+        top: -5px;
+        left: 0;
+    }
+
+    .heart::after {
+        left: 5px;
+        top: 0;
+    }
+
+    /* Hiệu ứng rơi */
+    @keyframes fall {
+        0% {
+            transform: translateY(-10px) rotate(45deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(100vh) rotate(45deg);
+            opacity: 0;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Chào mừng đến với Lớp Học 12A7 2022-2025</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Trang Chủ🏘️</a></li>
+        <li><a href="members.html">Thành Viên🫂</a></li>
+        <li><a href="activities.html">Hoạt Động🤟🏻</a></li>
+        <li><a href="gallery.html">Thư Viện Ảnh📸</a></li>
+                <li><a href="contact.html">Liên Hệ☎️</a></li>
+      
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Khẩu hiệu lớp học: "A7 KHÔNG BAO GIỜ GÃY"</h2>
+    <img src="hđ11.jpg" width="350">
+    <p>Chào mừng thầy soái ca đến với vùng đất tâm hồn của 12A7💒</p>
+  </section>
+
+  <footer>
+    <p>Lớp học hạnh phúc 12A7💞</p>
+  </footer>
+  <script>
+    // Hàm tạo trái tim
+    function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+
+    // Vị trí ngẫu nhiên theo chiều ngang
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = Math.random() * 3 + 4 + 's'; // Rơi chậm hơn chút
+
+    document.body.appendChild(heart);
+
+    // Xóa trái tim sau khi rơi xong
+    setTimeout(() => {
+        heart.remove();
+    }, 7000); // Để lâu hơn nếu cần
+}
+
+// Tạo trái tim liên tục
+setInterval(createHeart, 200); // 200ms tạo 1 trái tim
+</script>
+</class="">
+</html>
